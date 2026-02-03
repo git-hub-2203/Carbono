@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CarbonScope</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>CarbonScope</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="dashboard.html" class="active"><i class="fas fa-chart-bar"></i> Dashboard</a>
+                <a href="habits.html"><i class="fas fa-clipboard-list"></i> Hábitos</a>
+                <a href="scenarios.html"><i class="fas fa-chart-line"></i> Cenários</a>
+                <a href="plans.html"><i class="fas fa-calendar-check"></i> Planos</a>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+            <div class="dashboard-header">
+                <h2><i class="fas fa-chart-bar"></i> Dashboard de Emissões</h2>
+                <button id="refreshBtn" class="btn btn-small">
+                    <i class="fas fa-sync-alt"></i> Atualizar
+                </button>
+            </div>
+            
+            <div class="stats-summary">
+                <div class="stat-total">
+                    <h3>Emissões Totais do Mês</h3>
+                    <div class="total-number" id="totalEmissions">0</div>
+                    <p>kg CO₂e</p>
+                </div>
+                <div class="stat-compare">
+                    <h3>Comparação</h3>
+                    <div class="compare-value" id="comparison">0%</div>
+                    <p>vs. mês anterior</p>
+                </div>
+                <div class="stat-goal">
+                    <h3>Meta de Redução</h3>
+                    <div class="goal-value" id="reductionGoal">0%</div>
+                    <p>atingida</p>
+                </div>
+            </div>
+            
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3><i class="fas fa-chart-pie"></i> Emissões por Categoria</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3><i class="fas fa-chart-line"></i> Tendência Mensal</h3>
+                    <canvas id="monthlyChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="category-details">
+                <h3><i class="fas fa-list"></i> Detalhamento por Categoria</h3>
+                <div class="details-grid" id="categoryDetails">
+                    <!-- Preenchido por JavaScript -->
+                </div>
+            </div>
+            
+            <div class="insights">
+                <h3><i class="fas fa-lightbulb"></i> Insights e Recomendações</h3>
+                <div class="insights-list" id="insightsList">
+                    <!-- Preenchido por JavaScript -->
+                </div>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>CarbonScope © 2024 - Calculadora de Pegada de Carbono</p>
+            <p class="footer-note">Dados armazenados localmente no seu navegador</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

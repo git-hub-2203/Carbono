@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Hábitos - CarbonScope</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>CarbonScope</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="dashboard.html"><i class="fas fa-chart-bar"></i> Dashboard</a>
+                <a href="habits.html" class="active"><i class="fas fa-clipboard-list"></i> Hábitos</a>
+                <a href="scenarios.html"><i class="fas fa-chart-line"></i> Cenários</a>
+                <a href="plans.html"><i class="fas fa-calendar-check"></i> Planos</a>
+            </nav>
+        </header>
+
+        <main class="habits-page">
+            <h2><i class="fas fa-clipboard-list"></i> Registrar Hábitos</h2>
+            <p class="page-subtitle">Adicione seus hábitos para calcular sua pegada de carbono</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="transport">
+                    <i class="fas fa-car"></i> Transporte
+                </button>
+                <button class="tab-btn" data-tab="energy">
+                    <i class="fas fa-bolt"></i> Energia
+                </button>
+                <button class="tab-btn" data-tab="food">
+                    <i class="fas fa-utensils"></i> Alimentação
+                </button>
+                <button class="tab-btn" data-tab="shopping">
+                    <i class="fas fa-shopping-bag"></i> Compras
+                </button>
+                <button class="tab-btn" data-tab="waste">
+                    <i class="fas fa-trash"></i> Resíduos
+                </button>
+            </div>
+            
+            <div class="tab-content active" id="transport-tab">
+                <div class="form-section">
+                    <h3><i class="fas fa-car"></i> Hábitos de Transporte</h3>
+                    <form id="transportForm">
+                        <div class="form-group">
+                            <label for="transportType">Tipo de Transporte:</label>
+                            <select id="transportType" required>
+                                <option value="">Selecione...</option>
+                                <option value="car_gasoline">Carro a gasolina</option>
+                                <option value="car_ethanol">Carro a etanol</option>
+                                <option value="motorcycle">Moto</option>
+                                <option value="bus">Ônibus</option>
+                                <option value="subway">Metrô/Trem</option>
+                                <option value="bicycle">Bicicleta</option>
+                                <option value="walking">Caminhada</option>
+                                <option value="airplane">Avião</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transportDistance">Distância por viagem (km):</label>
+                            <input type="number" id="transportDistance" min="0" step="0.1" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="transportFrequency">Frequência:</label>
+                            <select id="transportFrequency" required>
+                                <option value="">Selecione...</option>
+                                <option value="daily">Diariamente</option>
+                                <option value="weekly_1">1 vez por semana</option>
+                                <option value="weekly_2">2 vezes por semana</option>
+                                <option value="weekly_3">3 vezes por semana</option>
+                                <option value="weekly_5">5 vezes por semana</option>
+                                <option value="monthly_1">1 vez por mês</option>
+                                <option value="monthly_2">2 vezes por mês</option>
+                                <option value="monthly_4">4 vezes por mês</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Adicionar Hábito
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="energy-tab">
+                <div class="form-section">
+                    <h3><i class="fas fa-bolt"></i> Consumo de Energia</h3>
+                    <form id="energyForm">
+                        <div class="form-group">
+                            <label for="energyType">Tipo de Energia:</label>
+                            <select id="energyType" required>
+                                <option value="">Selecione...</option>
+                                <option value="electricity">Eletricidade (kWh)</option>
+                                <option value="natural_gas">Gás Natural (m³)</option>
+                                <option value="lpg">Gás de Cozinha (kg)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="energyConsumption">Consumo mensal:</label>
+                            <input type="number" id="energyConsumption" min="0" step="0.1" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Adicionar Hábito
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="food-tab">
+                <div class="form-section">
+                    <h3><i class="fas fa-utensils"></i> Hábitos Alimentares</h3>
+                    <form id="foodForm">
+                        <div class="form-group">
+                            <label for="foodType">Tipo de Alimento:</label>
+                            <select id="foodType" required>
+                                <option value="">Selecione...</option>
+                                <option value="beef">Carne bovina</option>
+                                <option value="chicken">Frango</option>
+                                <option value="pork">Porco</option>
+                                <option value="fish">Peixe</option>
+                                <option value="dairy">Laticínios</option>
+                                <option value="vegetables">Legumes/Verduras</option>
+                                <option value="grains">Grãos/Cereais</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="foodQuantity">Quantidade semanal (kg):</label>
+                            <input type="number" id="foodQuantity" min="0" step="0.1" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Adicionar Hábito
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="shopping-tab">
+                <div class="form-section">
+                    <h3><i class="fas fa-shopping-bag"></i> Hábitos de Consumo</h3>
+                    <form id="shoppingForm">
+                        <div class="form-group">
+                            <label for="itemType">Tipo de Item:</label>
+                            <select id="itemType" required>
+                                <option value="">Selecione...</option>
+                                <option value="electronics">Eletrônicos</option>
+                                <option value="clothing">Roupas</option>
+                                <option value="furniture">Móveis</option>
+                                <option value="plastic">Produtos de plástico</option>
+                                <option value="paper">Produtos de papel</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="itemQuantity">Quantidade mensal (unidades):</label>
+                            <input type="number" id="itemQuantity" min="0" step="1" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Adicionar Hábito
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="waste-tab">
+                <div class="form-section">
+                    <h3><i class="fas fa-trash"></i> Geração de Resíduos</h3>
+                    <form id="wasteForm">
+                        <div class="form-group">
+                            <label for="wasteType">Tipo de Resíduo:</label>
+                            <select id="wasteType" required>
+                                <option value="">Selecione...</option>
+                                <option value="landfill">Aterro comum</option>
+                                <option value="recycled">Reciclado</option>
+                                <option value="composted">Compostado</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="wasteQuantity">Quantidade semanal (kg):</label>
+                            <input type="number" id="wasteQuantity" min="0" step="0.1" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Adicionar Hábito
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="habits-list-section">
+                <h3><i class="fas fa-list"></i> Seus Hábitos Registrados</h3>
+                <div id="habitsList" class="habits-list">
+                    <!-- Lista de hábitos será preenchida por JavaScript -->
+                </div>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>CarbonScope © 2024 - Calculadora de Pegada de Carbono</p>
+            <p class="footer-note">Dados armazenados localmente no seu navegador</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

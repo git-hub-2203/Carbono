@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos - CarbonScope</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>CarbonScope</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="dashboard.html"><i class="fas fa-chart-bar"></i> Dashboard</a>
+                <a href="habits.html"><i class="fas fa-clipboard-list"></i> Hábitos</a>
+                <a href="scenarios.html"><i class="fas fa-chart-line"></i> Cenários</a>
+                <a href="plans.html" class="active"><i class="fas fa-calendar-check"></i> Planos</a>
+            </nav>
+        </header>
+
+        <main class="plans-page">
+            <h2><i class="fas fa-calendar-check"></i> Plano Semanal de Redução</h2>
+            <p class="page-subtitle">Crie metas semanais para reduzir sua pegada de carbono</p>
+            
+            <div class="current-week-plan">
+                <div class="week-header">
+                    <h3><i class="fas fa-calendar-week"></i> Esta Semana</h3>
+                    <div class="week-dates" id="currentWeekDates">
+                        <!-- Preenchido por JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="plan-progress">
+                    <h4>Progresso da Semana</h4>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="weekProgress" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0/0 metas concluídas</div>
+                </div>
+                
+                <div class="weekly-goals" id="weeklyGoals">
+                    <!-- Metas serão preenchidas por JavaScript -->
+                </div>
+                
+                <button id="createNewPlanBtn" class="btn btn-primary">
+                    <i class="fas fa-plus-circle"></i> Criar Novo Plano Semanal
+                </button>
+            </div>
+            
+            <div class="plan-creator" id="planCreator" style="display: none;">
+                <h3><i class="fas fa-edit"></i> Criar Novo Plano</h3>
+                
+                <div class="goal-selector">
+                    <h4>Selecione suas metas para a semana:</h4>
+                    
+                    <div class="goal-options">
+                        <div class="goal-option">
+                            <input type="checkbox" id="goal1" value="transport_public">
+                            <label for="goal1">
+                                <i class="fas fa-bus"></i>
+                                <span class="goal-title">Usar transporte público</span>
+                                <span class="goal-desc">Trocar 3 viagens de carro por ônibus/metrô</span>
+                            </label>
+                        </div>
+                        
+                        <div class="goal-option">
+                            <input type="checkbox" id="goal2" value="food_vegetarian">
+                            <label for="goal2">
+                                <i class="fas fa-carrot"></i>
+                                <span class="goal-title">Dias vegetarianos</span>
+                                <span class="goal-desc">2 dias sem carne na semana</span>
+                            </label>
+                        </div>
+                        
+                        <div class="goal-option">
+                            <input type="checkbox" id="goal3" value="energy_saving">
+                            <label for="goal3">
+                                <i class="fas fa-lightbulb"></i>
+                                <span class="goal-title">Economia de energia</span>
+                                <span class="goal-desc">Desligar aparelhos em standby</span>
+                            </label>
+                        </div>
+                        
+                        <div class="goal-option">
+                            <input type="checkbox" id="goal4" value="waste_recycling">
+                            <label for="goal4">
+                                <i class="fas fa-recycle"></i>
+                                <span class="goal-title">Aumentar reciclagem</span>
+                                <span class="goal-desc">Separar resíduos para reciclagem</span>
+                            </label>
+                        </div>
+                        
+                        <div class="goal-option">
+                            <input type="checkbox" id="goal5" value="shopping_reduce">
+                            <label for="goal5">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="goal-title">Compras conscientes</span>
+                                <span class="goal-desc">Evitar compras desnecessárias</span>
+                            </label>
+                        </div>
+                        
+                        <div class="goal-option">
+                            <input type="checkbox" id="goal6" value="transport_bike">
+                            <label for="goal6">
+                                <i class="fas fa-bicycle"></i>
+                                <span class="goal-title">Usar bicicleta</span>
+                                <span class="goal-desc">2 viagens de bicicleta em vez de carro</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-actions">
+                        <button id="savePlanBtn" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Salvar Plano
+                        </button>
+                        <button id="cancelPlanBtn" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="previous-plans">
+                <h3><i class="fas fa-history"></i> Planos Anteriores</h3>
+                <div id="previousPlansList" class="plans-history">
+                    <!-- Histórico será preenchido por JavaScript -->
+                </div>
+            </div>
+            
+            <div class="tips-section">
+                <h3><i class="fas fa-lightbulb"></i> Dicas para Redução</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-tint"></i>
+                        <h4>Economize água</h4>
+                        <p>Banhos mais curtos e fechar torneiras ao escovar os dentes</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Reduza energia</h4>
+                        <p>Use lâmpadas LED e desligue aparelhos da tomada</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-utensils"></i>
+                        <h4>Alimentação sustentável</h4>
+                        <p>Prefira alimentos locais e reduza o consumo de carne</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-recycle"></i>
+                        <h4>Recicle mais</h4>
+                        <p>Separe plástico, papel, vidro e metal para reciclagem</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>CarbonScope © 2024 - Calculadora de Pegada de Carbono</p>
+            <p class="footer-note">Dados armazenados localmente no seu navegador</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

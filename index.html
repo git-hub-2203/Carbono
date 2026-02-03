@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonScope - Calculadora de Pegada de Carbono</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>CarbonScope</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="active"><i class="fas fa-home"></i> Início</a>
+                <a href="dashboard.html"><i class="fas fa-chart-bar"></i> Dashboard</a>
+                <a href="habits.html"><i class="fas fa-clipboard-list"></i> Hábitos</a>
+                <a href="scenarios.html"><i class="fas fa-chart-line"></i> Cenários</a>
+                <a href="plans.html"><i class="fas fa-calendar-check"></i> Planos</a>
+            </nav>
+        </header>
+
+        <main class="hero-section">
+            <div class="hero-content">
+                <h2>Calcule sua Pegada de Carbono</h2>
+                <p>Descubra seu impacto no planeta e crie um plano personalizado para reduzi-lo.</p>
+                
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <i class="fas fa-car"></i>
+                        <h3>Transporte</h3>
+                        <p>Calcule emissões de veículos</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Energia</h3>
+                        <p>Consumo elétrico e gás</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Alimentação</h3>
+                        <p>Impacto de sua dieta</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>Compras</h3>
+                        <p>Emissões de consumo</p>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="habits.html" class="btn btn-primary">
+                        <i class="fas fa-plus-circle"></i> Registrar Hábitos
+                    </a>
+                    <a href="dashboard.html" class="btn btn-secondary">
+                        <i class="fas fa-chart-bar"></i> Ver Dashboard
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Planeta Terra sustentável">
+            </div>
+        </main>
+
+        <section class="features">
+            <h2>Como funciona o CarbonScope</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-edit"></i>
+                    <h3>1. Registre</h3>
+                    <p>Adicione seus hábitos de consumo, transporte, alimentação e energia.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-calculator"></i>
+                    <h3>2. Calcule</h3>
+                    <p>Obtenha estimativas de emissões de CO₂ por categoria e mês.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>3. Simule</h3>
+                    <p>Teste cenários "E se?" para ver impacto de mudanças.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tasks"></i>
+                    <h3>4. Reduza</h3>
+                    <p>Crie e acompanhe um plano semanal de redução.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <p>CarbonScope © 2024 - Calculadora de Pegada de Carbono</p>
+            <p class="footer-note">Dados armazenados localmente no seu navegador</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

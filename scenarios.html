@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenários - CarbonScope</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <h1>CarbonScope</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html"><i class="fas fa-home"></i> Início</a>
+                <a href="dashboard.html"><i class="fas fa-chart-bar"></i> Dashboard</a>
+                <a href="habits.html"><i class="fas fa-clipboard-list"></i> Hábitos</a>
+                <a href="scenarios.html" class="active"><i class="fas fa-chart-line"></i> Cenários</a>
+                <a href="plans.html"><i class="fas fa-calendar-check"></i> Planos</a>
+            </nav>
+        </header>
+
+        <main class="scenarios-page">
+            <h2><i class="fas fa-chart-line"></i> Cenários "E se?"</h2>
+            <p class="page-subtitle">Simule mudanças em seus hábitos e veja o impacto na sua pegada de carbono</p>
+            
+            <div class="scenario-builder">
+                <div class="scenario-controls">
+                    <h3><i class="fas fa-sliders-h"></i> Criar Novo Cenário</h3>
+                    
+                    <div class="scenario-form">
+                        <div class="form-group">
+                            <label for="scenarioName">Nome do cenário:</label>
+                            <input type="text" id="scenarioName" placeholder="Ex: Trocar carro por ônibus" required>
+                        </div>
+                        
+                        <div class="scenario-actions">
+                            <h4>Modificar hábitos:</h4>
+                            
+                            <div class="action-item">
+                                <label>Reduzir viagens de carro em:</label>
+                                <div class="slider-container">
+                                    <input type="range" id="carReduction" min="0" max="100" value="0">
+                                    <span id="carReductionValue">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="action-item">
+                                <label>Dias sem carne por semana:</label>
+                                <div class="slider-container">
+                                    <input type="range" id="meatReduction" min="0" max="7" value="0">
+                                    <span id="meatReductionValue">0 dias</span>
+                                </div>
+                            </div>
+                            
+                            <div class="action-item">
+                                <label>Reduzir consumo de energia em:</label>
+                                <div class="slider-container">
+                                    <input type="range" id="energyReduction" min="0" max="50" value="0">
+                                    <span id="energyReductionValue">0%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="action-item">
+                                <label>Aumentar reciclagem em:</label>
+                                <div class="slider-container">
+                                    <input type="range" id="recyclingIncrease" min="0" max="100" value="0">
+                                    <span id="recyclingIncreaseValue">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button id="createScenarioBtn" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Criar Cenário
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="scenario-results">
+                    <h3><i class="fas fa-chart-bar"></i> Resultados do Cenário</h3>
+                    
+                    <div class="results-comparison">
+                        <div class="comparison-item baseline">
+                            <h4>Situação Atual</h4>
+                            <div class="emission-value" id="currentEmissions">0 kg CO₂e</div>
+                            <p>Emissões mensais</p>
+                        </div>
+                        
+                        <div class="comparison-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="comparison-item projected">
+                            <h4>Cenário Projetado</h4>
+                            <div class="emission-value" id="projectedEmissions">0 kg CO₂e</div>
+                            <p>Emissões mensais</p>
+                        </div>
+                    </div>
+                    
+                    <div class="savings-result">
+                        <h4>Redução Estimada</h4>
+                        <div class="savings-value" id="reductionPercent">0%</div>
+                        <div class="savings-kg" id="reductionKg">0 kg CO₂e</div>
+                    </div>
+                    
+                    <div class="scenario-impact">
+                        <h4>Impacto Equivalente</h4>
+                        <p id="impactEquivalent">Essa redução equivale a...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="saved-scenarios">
+                <h3><i class="fas fa-save"></i> Cenários Salvos</h3>
+                <div id="savedScenariosList" class="scenarios-list">
+                    <!-- Lista de cenários será preenchida por JavaScript -->
+                </div>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>CarbonScope © 2024 - Calculadora de Pegada de Carbono</p>
+            <p class="footer-note">Dados armazenados localmente no seu navegador</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
